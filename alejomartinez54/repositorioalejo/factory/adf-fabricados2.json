@@ -1,0 +1,9 @@
+{
+	"name": "adf-fabricados2",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c6d0d6e2-69ac-4376-bfb6-b66b81e405fb",
+		"tenantId": "d0a1ff5c-058a-4403-a904-bbe3c56d89e4"
+	}
+}
