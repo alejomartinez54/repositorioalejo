@@ -66,6 +66,14 @@
 										"URLkey_Vault": {
 											"value": "https://kv-almacenamiento1.vault.azure.net/",
 											"type": "Expression"
+										},
+										"esquema": {
+											"value": "@item().Esquema",
+											"type": "Expression"
+										},
+										"Tabla": {
+											"value": "@item().tabla",
+											"type": "Expression"
 										}
 									}
 								}
@@ -76,7 +84,7 @@
 			}
 		],
 		"parameters": {
-			"Esquema1": {
+			"esquema": {
 				"type": "string",
 				"defaultValue": "finance"
 			},
