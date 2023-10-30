@@ -71,7 +71,7 @@
 											"value": "@item().Esquema",
 											"type": "Expression"
 										},
-										"Tabla": {
+										"tabla": {
 											"value": "@item().tabla",
 											"type": "Expression"
 										}
