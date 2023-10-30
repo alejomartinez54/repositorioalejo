@@ -9,10 +9,10 @@
 			"URLkey_Vault": {
 				"type": "string"
 			},
-			"Esquema2": {
+			"esquema2": {
 				"type": "string"
 			},
-			"Tabla": {
+			"tabla": {
 				"type": "string"
 			}
 		},
