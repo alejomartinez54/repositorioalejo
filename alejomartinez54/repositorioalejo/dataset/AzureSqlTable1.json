@@ -6,9 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"URLkey_Vault": {
-				"type": "string"
-			},
 			"esquema": {
 				"type": "string"
 			},
