@@ -91,7 +91,7 @@
 											"value": "@item().esquema",
 											"type": "Expression"
 										},
-										"tabla": {
+										"table": {
 											"value": "@item().tabla",
 											"type": "Expression"
 										}
@@ -104,7 +104,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"schema2": {
-											"value": "@item().esquema2",
+											"value": "@item().schema2",
 											"type": "Expression"
 										},
 										"tabla": {
