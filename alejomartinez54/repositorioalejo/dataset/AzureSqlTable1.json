@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"esquema": {
+			"schema": {
 				"type": "string"
 			},
 			"tabla": {
@@ -18,11 +18,11 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": {
-				"value": "@dataset().Esquema",
+				"value": "@dataset().schema\n",
 				"type": "Expression"
 			},
 			"table": {
-				"value": "@dataset().Tabla",
+				"value": "@dataset().tabla",
 				"type": "Expression"
 			}
 		}
