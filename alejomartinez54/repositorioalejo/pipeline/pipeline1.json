@@ -49,7 +49,16 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
+							"userProperties": [
+								{
+									"name": "source",
+									"value": "@{item().schema}.@{item().tabla}"
+								},
+								{
+									"name": "destination",
+									"value": "@{item().schema2}.@{item().tabla}"
+								}
+							],
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
