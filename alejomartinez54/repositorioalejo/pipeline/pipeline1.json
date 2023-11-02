@@ -113,7 +113,7 @@
 		"parameters": {
 			"schema": {
 				"type": "string",
-				"defaultValue": "finanzas"
+				"defaultValue": "finance"
 			},
 			"schema2": {
 				"type": "string",

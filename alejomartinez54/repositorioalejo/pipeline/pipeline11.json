@@ -12,9 +12,9 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "table",
+					"variableName": "tabla",
 					"value": {
-						"value": "@json('[\n{\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"LogisticsAddressCountryRegionStaging\" ,   \n        \"pk_integracion\": \"COUNTRYREGION\"\n        },\n\n\t\t {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"PaymTermInvoiceStaging\" ,   \n        \"pk_integracion\": \"DATAAREAID\"\n        },\n\n\t\t {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"UFTProjInvoiceJourStaging\" ,   \n        \"pk_integracion\": \"DATAAREAID\"\n        },\n\n         {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"aqs_canton\" ,   \n        \"pk_integracion\": \"Codigo\"\n        },\n\n        {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"aqs_cliente\" ,   \n        \"pk_integracion\": \"IdClienteCrm\"\n        },\n\n        ]')\n        ",
+						"value": "@json('[\n{\n      \"schema\": \"dbo\",    \n        \"schema2\": \"alejo\",     \n        \"tabla\":\"LogisticsAddressCountryRegionStaging\" ,   \n        \"pk_integracion\": \"COUNTRYREGION\"\n        },\n\n\t\t {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"PaymTermInvoiceStaging\" ,   \n        \"pk_integracion\": \"DATAAREAID\"\n        },\n\n\t\t {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"UFTProjInvoiceJourStaging\" ,   \n        \"pk_integracion\": \"DATAAREAID\"\n        },\n\n         {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"aqs_canton\" ,   \n        \"pk_integracion\": \"Codigo\"\n        },\n\n        {\n      \"schema\": \"finance\",    \n        \"schema2\": \"dbo\",     \n        \"tabla\":\"aqs_cliente\" ,   \n        \"pk_integracion\": \"IdClienteCrm\"\n        },\n\n        ]')\n        ",
 						"type": "Expression"
 					}
 				}
@@ -33,7 +33,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('Table')",
+						"value": "@variables('tabla')",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -67,9 +67,14 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
-									"writeBehavior": "insert",
+									"writeBehavior": "upsert",
+									"upsertSettings": {
+										"useTempDB": true,
+										"keys": [
+											"PAISREGION"
+										]
+									},
 									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
@@ -84,14 +89,14 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureSqlTable11",
+									"referenceName": "AzureSqlTable1",
 									"type": "DatasetReference",
 									"parameters": {
 										"schema": {
-											"value": "@item().esquema",
+											"value": "@item().schema",
 											"type": "Expression"
 										},
-										"tabla": {
+										"table": {
 											"value": "@item().tabla",
 											"type": "Expression"
 										}
@@ -122,15 +127,15 @@
 		"parameters": {
 			"schema": {
 				"type": "string",
-				"defaultValue": "finanzas"
+				"defaultValue": "dbo"
 			},
 			"schema2": {
 				"type": "string",
-				"defaultValue": "dbo"
+				"defaultValue": "alejo"
 			}
 		},
 		"variables": {
-			"table": {
+			"tabla": {
 				"type": "Array",
 				"defaultValue": [
 					"LogisticsAddressCountryRegionStaging",
